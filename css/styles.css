@@ -47,10 +47,34 @@ img {
   padding-bottom: 94px;
 }
 
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 /* Стилизация хедера */
 
 .header {
   border-bottom: solid 1px #ececec;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
 }
 
 /* Стилизация логотипа */
@@ -72,13 +96,20 @@ img {
   color: #ffffff;
 }
 
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Стилизация навигации */
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
-.menu-link {
+.nav__list {
+  display: flex;
+  gap: 50px;
+  margin-left: 70px;
+}
+
+.nav__link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -92,12 +123,37 @@ img {
   transition: color var(--main-anim);
 }
 
-.menu-link:hover,
-.menu-link:focus {
+.nav__link:hover,
+.nav__link:focus {
   color: var(--accent-color);
 }
 
-.contact-link {
+.nav__link--current {
+  position: relative;
+  color: var(--accent-color);
+}
+
+.nav__link--current::after {
+  position: absolute;
+  right: -4%;
+  bottom: -1px;
+  display: block;
+  content: '';
+  width: 108%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Стилизация контактов хедера */
+
+.contacts {
+  display: flex;
+  gap: 50px;
+  margin-left: auto;
+}
+
+.contacts__link {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -113,64 +169,18 @@ img {
   transition: color var(--main-anim);
 }
 
-.contact-link:hover,
-.contact-link:focus {
+.contacts__link:hover,
+.contacts__link:focus {
   color: var(--accent-color);
 }
 
-.active-link {
-  position: relative;
-  color: var(--accent-color);
-}
-
-.active-link::after {
-  position: absolute;
-  right: -4%;
-  bottom: -1px;
-  display: block;
-  content: '';
-  width: 108%;
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-}
-
-.site-nav {
-  display: flex;
-  margin-left: 70px;
-}
-
-.site-nav .item + .item {
-  margin-left: 50px;
-}
-
-.contacts {
-  display: flex;
-  margin-left: auto;
-}
-
-.contacts .item + .item {
-  margin-left: 50px;
-}
-
-.main-nav,
-.main-nav nav {
-  display: flex;
-  align-items: center;
-}
-
-.contacts-icon {
+.contacts__icon {
   fill: currentColor;
 }
 
 /* Стилизация main */
 
 /* Герой */
-
-.container-hero {
-  width: 696px;
-  margin: 0 auto;
-}
 
 .hero {
   max-width: 1600px;
@@ -188,7 +198,12 @@ img {
   text-align: center;
 }
 
-.hero-title {
+.hero__container {
+  width: 696px;
+  margin: 0 auto;
+}
+
+.hero__title {
   margin: 0;
   margin-bottom: 30px;
   color: var(--light-color);
@@ -200,6 +215,8 @@ img {
   text-align: center;
   width: 696px;
 }
+
+/* Стилизация кнопки */
 
 .button {
   background-color: var(--accent-color);
@@ -228,24 +245,27 @@ img {
   padding-bottom: 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
-}
-
-.advantage-list {
+.advantage__list {
   display: flex;
+  gap: 30px;
 }
 
-.advantage-title {
+.advantage__item {
+  flex-basis: 100%;
+}
+
+.advantage__countainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 120px;
+  background: var(--background-button-color);
+  border-radius: 4px;
+}
+
+.advantage__description {
   margin-bottom: 10px;
 
   color: var(--main-font-color);
@@ -255,29 +275,10 @@ img {
   text-transform: uppercase;
 }
 
-.advantage-text {
+.advantage__text {
   color: var(--secondary-font-color);
   line-height: 1.71;
   letter-spacing: 0.03em;
-}
-
-.advantage-item {
-  flex-basis: 100%;
-}
-
-.advantage-list .advantage-item + .advantage-item {
-  margin-left: 30px;
-}
-
-.advantage-countainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  width: 100%;
-  height: 120px;
-  background: var(--background-button-color);
-  border-radius: 4px;
 }
 
 /* Чем мы занимаемся */
