@@ -66,6 +66,16 @@ img {
   margin: -1px;
 }
 
+.section-title {
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
 /* Стилизация хедера */
 
 .header {
@@ -283,29 +293,16 @@ img {
 
 /* Чем мы занимаемся */
 
-.section-title {
-  margin-bottom: 50px;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
 .employments {
   display: flex;
+  gap: 30px;
 }
 
-.employments .employments-item + .employments-item {
-  margin-left: 30px;
-}
-
-.employments-item {
+.employments__item {
   position: relative;
 }
 
-.employments-text {
+.employments__text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,23 +328,25 @@ img {
   background-color: #f5f4fa;
 }
 
-.team-list {
+.team__list {
   display: flex;
   text-align: center;
+  gap: 30px;
 }
 
-.team-list .team-item + .team-item {
-  margin-left: 30px;
-}
-
-.team-item {
+.team__item {
   background-color: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.name {
+.team__container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.team__name {
   margin-bottom: 10px;
 
   font-weight: 500;
@@ -356,7 +355,7 @@ img {
   letter-spacing: 0.03em;
 }
 
-.job-title {
+.team__position {
   margin-bottom: 16px;
   color: var(--secondary-font-color);
   font-size: 16px;
@@ -364,12 +363,15 @@ img {
   letter-spacing: 0.03em;
 }
 
-.team-container {
-  padding-top: 30px;
-  padding-bottom: 30px;
+/* Стилизация соц. сетей */
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.socials-link {
+.socials__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,26 +382,20 @@ img {
   transition: background-color var(--main-anim);
 }
 
-.socials-link:hover,
-.socials-link:focus {
+.socials__link:hover,
+.socials__link:focus {
   background-color: var(--accent-color);
 }
 
-.team-contacts-icon {
-  fill: var(--fill-icon);
-
-  transition: fill var(--main-anim);
-}
-
-.socials-link:hover .team-contacts-icon,
-.socials-link:focus .team-contacts-icon {
+.socials__link:hover .socials__icon,
+.socials__link:focus .socials__icon {
   fill: var(--main-background-color);
 }
 
-.socials-list {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.socials__icon {
+  fill: var(--fill-icon);
+
+  transition: fill var(--main-anim);
 }
 
 /* Постоянные клиенты */
