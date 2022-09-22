@@ -1,5 +1,9 @@
 .address {
     margin-top: 20px;
+
+    &__list{
+        @extend %list;
+    }
 }
 
 .address__item {

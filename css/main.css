@@ -26,6 +26,12 @@
   margin: -1px;
 }
 
+.filter, .address__list, .socials, .examples, .clients__list, .team__list, .employments, .advantages__list, .contacts, .nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--main-background-color);
   color: var(--main-font-color);
@@ -60,12 +66,6 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
-  padding: 0;
-}
-
-.list {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -877,7 +877,6 @@ p {
 .address {
   margin-top: 20px;
 }
-
 .address__item {
   margin-bottom: 9px;
 }

@@ -3,6 +3,8 @@
     align-items: center;
 
     &__list {
+            @extend %list;
+
             display: flex;
             gap: 50px;
             margin-left: 70px;
